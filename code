@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class TestGrade {
+
+	public static void main(String args[]) {
+	
+		double rtnTestGrade[];
+		
+		String[] firstName = new String[9];
+		double rtnAverage;
+		
+		firstName[2] = "Phineas";
+		firstName[4] = "Ferb";
+		
+		rtnTestGrade = gradeInput();
+		rtnAverage = averageGrade(rtnTestGrade);
+		
+		System.out.println("Average grade is: " + rtnAverage);
+	}
+
+		
+
+	static double[] gradeInput() {
+		
+		Scanner getGrade = new Scanner(System.in);
+		double val = 0.0;
+		double[] usrInput = new double[9];
+		
+		System.out.println("Enter all grades");
+		
+		for (int i= 0; i < 9; i++) {
+			
+			
+			val = getGrade.nextDouble();
+			usrInput[i] = val;
+			
+		}
+		    return usrInput;      
+	}
+
+
+	static double averageGrade(double[] rcvGrade) {
+		
+		double sum = 0.0;
+		double average = 0.0;
+		int total = rcvGrade.length;
+		
+		for (int i = 0; i < 9; i++) {
+			sum += rcvGrade[i];
+		}
+		
+		average = sum/total;
+		return average;
+	}
+	
+		}
+	
